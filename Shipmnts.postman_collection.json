@@ -1,0 +1,294 @@
+{
+	"info": {
+		"_postman_id": "a8a89d0a-62cf-4fee-aaae-58e3062775c6",
+		"name": "Shipmnts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Registration",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Prince\",\r\n    \"email\":\"Prince@example.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOTlkNmVlMTNkMDViYTlkMDRjMjMyOSIsImlhdCI6MTY3MTAyNjQxNCwiZXhwIjoxNjczNjE4NDE0fQ.Z77s7HwY2o09Yp5nj2S-_JEZLt7CAHsTGCqqyKeH8Fo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"Prince@example.com\",\r\n    \"password\":\"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/user/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Transaction",
+			"item": [
+				{
+					"name": "Add-Transaction",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWFkNDc1MWIwNjA1NzIzNmJkYzQyNiIsImlhdCI6MTY3MTA5MTM0NCwiZXhwIjoxNjczNjgzMzQ0fQ.PJQ_u-9EiGjRrOgbUY51ynYJ-20dn37T-wq3ti5Ft0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trxName\": \"Bill\",\r\n    \"amount\": \"300\",\r\n    \"userId\": \"639ad4751b06057236bdc426\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transaction/addtransaction",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction",
+								"addtransaction"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch-All Transaction-ById",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWFkNDc1MWIwNjA1NzIzNmJkYzQyNiIsImlhdCI6MTY3MTA5MTM0NCwiZXhwIjoxNjczNjgzMzQ0fQ.PJQ_u-9EiGjRrOgbUY51ynYJ-20dn37T-wq3ti5Ft0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"userId\": \"639ad4751b06057236bdc426\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transaction/transactionbyid",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction",
+								"transactionbyid"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fetch-Transaction-withDate",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWFkNDc1MWIwNjA1NzIzNmJkYzQyNiIsImlhdCI6MTY3MTA5MTM0NCwiZXhwIjoxNjczNjgzMzQ0fQ.PJQ_u-9EiGjRrOgbUY51ynYJ-20dn37T-wq3ti5Ft0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startDate\": \"2022-12-15T08:59:23.160+00:00\",\r\n    \"endDate\": \"2022-12-15T09:03:34.738+00:00\",\r\n    \"userId\": \"639ad4751b06057236bdc426\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transaction/transactionbydate",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction",
+								"transactionbydate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Category",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWFkNDc1MWIwNjA1NzIzNmJkYzQyNiIsImlhdCI6MTY3MTA5MTM0NCwiZXhwIjoxNjczNjgzMzQ0fQ.PJQ_u-9EiGjRrOgbUY51ynYJ-20dn37T-wq3ti5Ft0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"category\": \"Fitness\",\r\n    \"userId\": \"639ad4751b06057236bdc426\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transaction/createcategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction",
+								"createcategory"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create-Transaction-UnderCategory",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzOWFkNDc1MWIwNjA1NzIzNmJkYzQyNiIsImlhdCI6MTY3MTA5MTM0NCwiZXhwIjoxNjczNjgzMzQ0fQ.PJQ_u-9EiGjRrOgbUY51ynYJ-20dn37T-wq3ti5Ft0g",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"trxName\": \"protein\",\r\n    \"amount\": \"300\",\r\n    \"userId\": \"639ad4751b06057236bdc426\",\r\n    \"categoryId\": \"639b1768ba31ae244f67a4d7\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/api/transaction/createtransactionundercategory",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"api",
+								"transaction",
+								"createtransactionundercategory"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
