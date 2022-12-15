@@ -2,6 +2,7 @@ const express = require("express");
 const dotenv = require("dotenv");
 const connectDB = require("./config/dbConnection");
 const authUser = require("./routes/userRoutes");
+const transaction = require("./routes/transaction");
 const { notFound, errorHandler } = require("./middlewares/errorMiddleware");
 
 dotenv.config();
@@ -15,6 +16,7 @@ app.get("/", (req, res) => {
 });
 
 app.use("/api/user", authUser);
+app.use("/api/transaction", transaction);
 //If no routes exist it will fall on this
 app.use(notFound);
 //If still there is a error it will fall on this
